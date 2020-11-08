@@ -90,7 +90,7 @@
     <!--::our_service part end::-->
 
     <!--::pricing part start::-->
-    <section class="pricing_part section_padding home_page_pricing">
+   <section class="pricing_part section_padding home_page_pricing">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -105,16 +105,12 @@
                     <div class="single_pricing_part">
                         <div class="pricing_tittle">
                         <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyLjAzNSA1MTIuMDM1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDM1IDUxMi4wMzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMyMTk2RjM7IiBkPSJNNDg4LjUwMiwyNTYuMDM1bDIyLjQ2NC01OC41OTJjMi40NjQtNi40NjQsMC41NDQtMTMuNzkyLTQuODY0LTE4LjE3NmwtNDguNzA0LTM5LjQ4OGwtOS44NTYtNjEuOTg0DQoJYy0xLjA4OC02Ljg0OC02LjQ2NC0xMi4xOTItMTMuMzEyLTEzLjI4bC02MS45ODQtOS44NTZMMzMyLjc5LDUuOTIzYy00LjM1Mi01LjQwOC0xMS44NC03LjMyOC0xOC4xNDQtNC44NjRsLTU4LjYyNCwyMi40OTYNCglMMTk3LjQzLDEuMDkxYy02LjQ5Ni0yLjQ5Ni0xMy43Ni0wLjUxMi0xOC4xNDQsNC44NjRsLTM5LjQ4OCw0OC43MzZsLTYxLjk4NCw5Ljg1NmMtNi44MTYsMS4wODgtMTIuMTkyLDYuNDY0LTEzLjI4LDEzLjI4DQoJbC05Ljg1Niw2MS45ODRMNS45NDIsMTc5LjI5OWMtNS4zNzYsNC4zNTItNy4zMjgsMTEuNjgtNC44NjQsMTguMTQ0bDIyLjQ2NCw1OC41OTJMMS4wNzgsMzE0LjYyNw0KCWMtMi40OTYsNi40NjQtMC41MTIsMTMuNzkyLDQuODY0LDE4LjE0NGw0OC43MzYsMzkuNDU2bDkuODU2LDYxLjk4NGMxLjA4OCw2Ljg0OCw2LjQzMiwxMi4yMjQsMTMuMjgsMTMuMzEybDYxLjk4NCw5Ljg1Ng0KCWwzOS40ODgsNDguNzA0YzQuMzg0LDUuNDQsMTEuNzEyLDcuMzYsMTguMTc2LDQuODY0bDU4LjU2LTIyLjQzMmw1OC41OTIsMjIuNDY0YzEuODU2LDAuNzA0LDMuNzc2LDEuMDU2LDUuNzI4LDEuMDU2DQoJYzQuNzA0LDAsOS4zNDQtMi4wOCwxMi40NDgtNS45NTJsMzkuNDU2LTQ4LjcwNGw2MS45ODQtOS44NTZjNi44NDgtMS4wODgsMTIuMjI0LTYuNDY0LDEzLjMxMi0xMy4zMTJsOS44NTYtNjEuOTg0bDQ4LjcwNC0zOS40NTYNCgljNS40MDgtNC4zODQsNy4zMjgtMTEuNjgsNC44NjQtMTguMTQ0TDQ4OC41MDIsMjU2LjAzNXoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGQUZBRkE7IiBkPSJNMTEyLjAyMiwyMDguMDM1YzguODMyLDAsMTYtNy4xNjgsMTYtMTZzLTcuMTY4LTE2LTE2LTE2aC0zMmMtOC44MzIsMC0xNiw3LjE2OC0xNiwxNnYxMjgNCgkJYzAsOC44MzIsNy4xNjgsMTYsMTYsMTZzMTYtNy4xNjgsMTYtMTZ2LTQ4aDE2YzguODMyLDAsMTYtNy4xNjgsMTYtMTZzLTcuMTY4LTE2LTE2LTE2aC0xNnYtMzJIMTEyLjAyMnoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRkFGQUZBOyIgZD0iTTMzNi4wMjIsMjA4LjAzNWM4LjgzMiwwLDE2LTcuMTY4LDE2LTE2cy03LjE2OC0xNi0xNi0xNmgtMzJjLTguODMyLDAtMTYsNy4xNjgtMTYsMTZ2MTI4DQoJCWMwLDguODMyLDcuMTY4LDE2LDE2LDE2aDMyYzguODMyLDAsMTYtNy4xNjgsMTYtMTZzLTcuMTY4LTE2LTE2LTE2aC0xNnYtMzJoMTZjOC44MzIsMCwxNi03LjE2OCwxNi0xNnMtNy4xNjgtMTYtMTYtMTZoLTE2di0zMg0KCQlIMzM2LjAyMnoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRkFGQUZBOyIgZD0iTTQzMi4wMjIsMjcyLjAzNWM4LjgzMiwwLDE2LTcuMTY4LDE2LTE2cy03LjE2OC0xNi0xNi0xNmgtMTZ2LTMyaDE2YzguODMyLDAsMTYtNy4xNjgsMTYtMTYNCgkJcy03LjE2OC0xNi0xNi0xNmgtMzJjLTguODMyLDAtMTYsNy4xNjgtMTYsMTZ2MTI4YzAsOC44MzIsNy4xNjgsMTYsMTYsMTZoMzJjOC44MzIsMCwxNi03LjE2OCwxNi0xNnMtNy4xNjgtMTYtMTYtMTZoLTE2di0zMg0KCQlINDMyLjAyMnoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRkFGQUZBOyIgZD0iTTI1Ni4wMjIsMjI0LjAzNWMwLTI2LjQ2NC0yMS41MzYtNDgtNDgtNDhoLTMyYy04LjgzMiwwLTE2LDcuMTY4LTE2LDE2djEyOGMwLDguODMyLDcuMTY4LDE2LDE2LDE2DQoJCXMxNi03LjE2OCwxNi0xNnYtMzcuMzQ0bDM1LjIsNDYuOTQ0YzMuMTM2LDQuMTkyLDcuOTM2LDYuNCwxMi44LDYuNGMzLjMyOCwwLDYuNjg4LTEuMDI0LDkuNTY4LTMuMg0KCQljNy4wNzItNS4zMTIsOC41MTItMTUuMzI4LDMuMi0yMi40bC0zMC41Ni00MC44QzI0MS43MTgsMjYzLjU1NSwyNTYuMDIyLDI0NS41MzksMjU2LjAyMiwyMjQuMDM1eiBNMjA4LjAyMiwyNDAuMDM1aC0xNnYtMzJoMTYNCgkJYzguODMyLDAsMTYsNy4xNjgsMTYsMTZTMjE2Ljg1NCwyNDAuMDM1LDIwOC4wMjIsMjQwLjAzNXoiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" />    
-                        <p>Free</p>
+                        <p>Sin costo</p>
                         </div>
                         <div class="pricing_content">
-                            <h3>$0.00 <span>/ mo</span></h3>
+                            <h3>$0.00 </h3>
                             <ul>
-                                <li>2GB Bandwidth</li>
-                                <li>Two Account</li>
-                                <li>15GB Storage</li>
-                                <li>Sale After Service</li>
-                                <li>3 Host Domain</li>
+                                <li>Contenido Gratuito</li>                                                            
                                 <li>24/7 Support</li>
                             </ul>
                             <a href="#" class="btn_2">book Now</a>
@@ -125,16 +121,14 @@
                     <div class="single_pricing_part">
                         <div class="pricing_tittle">
                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6IzQ4OTlEMjsiIGQ9Ik00MjMuMDk3LDI5Mi43NjFjMzguMS0yNy44OSw0Ni4zNzItODEuMzc5LDE4LjQ4Mi0xMTkuNDc5UzM2MC4yLDEyNi45MSwzMjIuMSwxNTQuOA0KCXMtNDYuMzcyLDgxLjM3OS0xOC40ODIsMTE5LjQ3OWM1LjE3OSw3LjA3MiwxMS40MTEsMTMuMzAzLDE4LjQ4MiwxOC40ODJjLTE0LjkxOSw1Ljg1My0yOC43MiwxNC4yMjYtNDAuODA1LDI0Ljc0MQ0KCWM3LjE4Miw3LjY5OSwxMy41NTIsMTYuMTEsMTkuMDE4LDI1LjExMWM0NC4wODItMzkuOTY1LDExMi4yMTMtMzYuNjIzLDE1Mi4xNzgsNy40NTljMTQuNTg2LDE2LjA5MSwyMy45NjYsMzYuMjA3LDI2LjkyLDU3LjcxOA0KCUgzMjIuNDdjMCw0LjgwMSwwLjczOSw5LjIzMiwwLjczOSwxNC40OTR2MS4yOTJIMjMzLjI5YzAsOC43MTUsNy4wNjIsMTUuNzg3LDE1Ljc4NywxNS43ODdjMC4wNjUsMCwwLjEyLDAsMC4xODUsMGgyNDYuOTUzDQoJYzguNzE1LDAsMTUuNzg3LTcuMDcyLDE1Ljc4Ny0xNS43ODd2LTEuMDE2QzUxMS45MTcsMzY1LjExMSw0NzYuNjMzLDMxMy41ODgsNDIzLjA5NywyOTIuNzYxeiBNMzcyLjU5OSwxNjkuOTc3DQoJYzI5Ljc3MywwLDUzLjkxNCwyNC4xNDEsNTMuOTE0LDUzLjkxNHMtMjQuMTQxLDUzLjkxNC01My45MTQsNTMuOTE0cy01My45MTQtMjQuMTQxLTUzLjkxNC01My45MTRsMCwwDQoJQzMxOC43NCwxOTQuMTM3LDM0Mi44NDQsMTcwLjAyMywzNzIuNTk5LDE2OS45Nzd6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojMjkzQzdEOyIgZD0iTTIyMy41MDQsMjYxLjkyN2M0Ny45NDEtMzAuMDc3LDYyLjQxNy05My4zMjUsMzIuMzMtMTQxLjI2NnMtOTMuMzI1LTYyLjQxNy0xNDEuMjY2LTMyLjMzOQ0KCXMtNjIuNDE3LDkzLjMzNC0zMi4zMywxNDEuMjc1YzguMjA3LDEzLjA3MiwxOS4yNTgsMjQuMTIzLDMyLjMzLDMyLjMzQzQ2LjA2NywyODUuNDUsMC4wNTUsMzQ5Ljg2LDAsNDIyLjI4NHYxLjI5Mg0KCWMwLDguNzE1LDcuMDcyLDE1Ljc4NiwxNS43ODcsMTUuNzg2aDMwNy4zMjljOC43MTUsMCwxNS43ODYtNy4wNzIsMTUuNzg2LTE1Ljc4NnYtMS4yOTINCglDMzM4LjcyNywzNDkuNjM5LDI5Mi4zMjcsMjg1LjE2MywyMjMuNTA0LDI2MS45Mjd6IE0xNjkuMDM2LDEwNC4zMzljMzkuMjA4LDAsNzAuOTkzLDMxLjc4NSw3MC45OTMsNzAuOTkzDQoJcy0zMS43ODUsNzAuOTkzLTcwLjk5Myw3MC45OTNzLTcwLjk5My0zMS43ODUtNzAuOTkzLTcwLjk5M2MwLTAuMDI4LDAtMC4wNjUsMC0wLjA5Mg0KCUM5OC4wOTgsMTM2LjA2OSwxMjkuODY1LDEwNC4zMzksMTY5LjAzNiwxMDQuMzM5eiBNMzEuODUsNDA3Ljc5YzcuODc1LTc1Ljc2Niw3NS42NzQtMTMwLjgwNiwxNTEuNDQtMTIyLjkzMg0KCWM2NC45LDYuNzM5LDExNi4xOTIsNTguMDMyLDEyMi45MzIsMTIyLjkzMkgzMS44NXoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" />
-                            <p>Users</p>
+                            <p>Usuarios con cuenta</p>
                         </div>
                         <div class="pricing_content">
-                            <h3>$10.00 <span>/ mo</span></h3>
+                            <h3>$0.00 <span>/mo</span></h3>
                             <ul>
-                                <li>2GB Bandwidth</li>
-                                <li>Two Account</li>
-                                <li>15GB Storage</li>
-                                <li>Sale After Service</li>
-                                <li>3 Host Domain</li>
+                                <li>Contenido Free</li>
+                                <li>Descargas limitadas</li>
+                                <li>Compra de imagenes individuales</li>                                                               
                                 <li>24/7 Support</li>
                             </ul>
                             <a href="#" class="btn_2">book Now</a>
@@ -149,12 +143,9 @@
                         </div>
                         <div class="pricing_content">
                             <h3>$20.00 <span>/ mo</span></h3>
-                            <ul>
-                                <li>2GB Bandwidth</li>
-                                <li>Two Account</li>
-                                <li>15GB Storage</li>
-                                <li>Sale After Service</li>
-                                <li>3 Host Domain</li>
+                            <ul>                                
+                                <li>Descargas ilimitadas</li>  
+                                <li>Acceso a todo contenido</li>                             
                                 <li>24/7 Support</li>
                             </ul>
                             <a href="#" class="btn_2">book Now</a>

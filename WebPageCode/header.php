@@ -27,9 +27,7 @@
                                         <a class="dropdown-item" href="shop.php">Catalogo</a>
                                         <a class="dropdown-item" href="image.php">Info Producto</a>
                                         <a class="dropdown-item" href="car.php">Carrito</a>
-                                        <a class="dropdown-item" href="wishlist.php">Lista de deseos</a>
-                                        <a class="dropdown-item" href="portfolio_details.html">Login</a>
-
+                                        <a class="dropdown-item" href="wishlist.php">Lista de deseos</a>                                        
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -37,6 +35,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contactanos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="signup.php"><i class="fas fa-user fa-x"></i></a>
                                 </li>
                             </ul>
                         </div>

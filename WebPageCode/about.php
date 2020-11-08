@@ -73,7 +73,7 @@
  
     <!--::review_part part end::-->
     <?php include('footer.php'); ?>
-    <!--::footer_part start::-->
+    <!--::footer_part start::--> 
     <!--::footer_part end::-->
 
     <!-- jquery plugins here-->
