@@ -1,9 +1,3 @@
-<?php
-  include("conexion.php");
-  $con=conectarBD();
-
-  //echo "Se realizo la conexion exitosamente";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
