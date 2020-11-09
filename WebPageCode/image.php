@@ -1,5 +1,11 @@
-<!doctype html>
-<html lang="zxx">
+<?php
+  include("conexion.php");
+  $con=conectarBD();
+
+  //echo "Se realizo la conexion exitosamente";
+?>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
