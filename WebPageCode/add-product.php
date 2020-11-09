@@ -40,7 +40,7 @@
           <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
             <div class="row">
               <div class="col-12">
-                <h2 class="tm-block-title d-inline-block">Agregar nuevo producto</h2>
+                <h2 class="tm-block-title d-inline-block">Add Product</h2>
               </div>
             </div>
             <div class="row tm-edit-product-row">
@@ -49,7 +49,7 @@
                   <div class="form-group mb-3">
                     <label
                       for="name"
-                      >Nombre del producto
+                      >Product Name
                     </label>
                     <input
                       id="name"
