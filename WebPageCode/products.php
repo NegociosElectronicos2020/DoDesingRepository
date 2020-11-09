@@ -1,3 +1,10 @@
+<?php
+  include("conexion.php");
+  $con=conectarBD();
+
+  //echo "Se realizo la conexion exitosamente";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,89 +29,10 @@
   </head>
 
   <body id="reportsPage">
-    <nav class="navbar navbar-expand-xl">
-      <div class="container h-100">
-        <a class="navbar-brand" href="admin.php">
-          <h1 class="tm-site-title mb-0">Product Admin</h1>
-        </a>
-        <button
-          class="navbar-toggler ml-auto mr-0"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars tm-nav-icon"></i>
-        </button>
+    <?php
+    include("header_admin.php");
+    ?>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto h-100">
-            <li class="nav-item">
-              <a class="nav-link" href="admin.php">
-                <i class="fas fa-tachometer-alt"></i> Dashboard
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">
-                <i class="far fa-file-alt"></i>
-                <span> Reports <i class="fas fa-angle-down"></i> </span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Daily Report</a>
-                <a class="dropdown-item" href="#">Weekly Report</a>
-                <a class="dropdown-item" href="#">Yearly Report</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="products.php">
-                <i class="fas fa-shopping-cart"></i> Products
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="accounts.php">
-                <i class="far fa-user"></i> Accounts
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">
-                <i class="fas fa-cog"></i>
-                <span> Settings <i class="fas fa-angle-down"></i> </span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Billing</a>
-                <a class="dropdown-item" href="#">Customize</a>
-              </div>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link d-block" href="login_admin.php">
-                Admin, <b>Logout</b>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <div class="container mt-5">
       <div class="row tm-content-row">
         <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
@@ -260,112 +188,57 @@
             <!-- table container -->
             <a
               href="add-product.php"
-              class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
+              class="btn btn-primary btn-block text-uppercase mb-3">Añadir Productos</a>
             <button class="btn btn-primary btn-block text-uppercase">
-              Delete selected products
+              Borrar productos seleccionados
             </button>
           </div>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
           <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-            <h2 class="tm-block-title">Product Categories</h2>
+            <h2 class="tm-block-title">Categorias de Productos</h2>
             <div class="tm-product-table-container">
               <table class="table tm-table-small tm-product-table">
-                <tbody>
-                  <tr>
-                    <td class="tm-product-name">Product Category 1</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 2</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 3</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 4</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 5</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 6</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 7</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 8</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 9</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 10</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tm-product-name">Product Category 11</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
+                <tbody>                 
+
+                  <?php
+                  $consulta="SELECT * FROM categoria";
+                  $ejecutarConsulta= mysqli_query($con, $consulta);
+                  $verFilas=mysqli_num_rows($ejecutarConsulta);
+                  $fila=mysqli_fetch_array($ejecutarConsulta);
+
+                  if(!$ejecutarConsulta)
+                  {
+                    echo "Error en la consulta";
+                  }
+                  else{
+                    if($verFilas<1)
+                    {
+                      echo "<tr><td>Sin registros</td></tr>";
+                    }else{
+                      for($i=0; $i<=$fila;$i++){
+                        echo 
+                        '<tr>
+                        <td class="tm-product-name">'.$fila[1].'</td>
+                        <td class="text-center">
+                          <a href="#" class="tm-product-delete-link">
+                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                          </a>
+                        </td>
+                        </tr>  
+                        ';
+                        $fila=mysqli_fetch_array($ejecutarConsulta);
+                      }
+                    }
+                  }
+                  ?>   
+
                 </tbody>
               </table>
             </div>
             <!-- table container -->
             <button class="btn btn-primary btn-block text-uppercase mb-3">
-              Add new category
+              Añadir categoria
             </button>
           </div>
         </div>
