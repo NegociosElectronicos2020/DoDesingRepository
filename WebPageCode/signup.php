@@ -1,15 +1,16 @@
 <?php
-  include("conexion.php");
-  $con=conectarBD();
+include("conexion.php");
+$con = conectarBD();
 
-  //echo "Se realizo la conexion exitosamente";
-  session_start();
-  if (isset($_SESSION['usuario'])) {
-	header('Location: index.php');
+//echo "Se realizo la conexion exitosamente";
+session_start();
+if (isset($_SESSION['usuario'])) {
+    header('Location: index.php');
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="ingreso/css/style.css">
 </head>
+
 <body>
 
     <div class="main">
@@ -35,56 +37,54 @@
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Tu nombre" required/>
+                                <input type="text" name="name" id="name" placeholder="Tu nombre" required />
                             </div>
                             <div class="form-group">
                                 <label for="address"><i class="zmdi zmdi-home"></i></label>
-                                <input type="text" name="address" id="address" placeholder="Direccion" required/>
+                                <input type="text" name="address" id="address" placeholder="Direccion" required />
                             </div>
                             <div class="form-group">
                                 <label for="phone"><i class="zmdi zmdi-phone"></i></label>
-                                <input type="text" name="phone" id="phone" placeholder="Telefono" required/>
+                                <input type="text" name="phone" id="phone" placeholder="Telefono" required />
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="E-mail  Ej. user@ejemplo.com" required/>
+                                <input type="email" name="email" id="email" placeholder="E-mail  Ej. user@ejemplo.com" required />
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Contraseña" required/>
+                                <input type="password" name="pass" id="pass" placeholder="Contraseña" required />
                             </div>
-                            
+
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Registrar"/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Registrar" />
                             </div>
                         </form>
                     </div>
 
                     <?php
-      if(isset($_POST['signup']))
-      {
-        $name=$_POST["name"];
-        $address=$_POST["address"];
-        $phone=$_POST["phone"];
-        $email=$_POST["email"];
-        $pass=$_POST["pass"];   
-        $passHash = md5($pass);     
+                    if (isset($_POST['signup'])) {
+                        $name = $_POST["name"];
+                        $address = $_POST["address"];
+                        $phone = $_POST["phone"];
+                        $email = $_POST["email"];
+                        $pass = $_POST["pass"];
+                        $password = hash('sha512', $pass);
 
-        $insertarUsuario="INSERT INTO usuario (Id_Rol, Nombre_Usuario, Direccion, Telefono, Emaill, Contraseña) 
-                                                        VALUES 
-                                                        (2, '$name'
-                                                        , '$address'
-                                                        , '$phone'
-                                                        , '$email'
-                                                        , '$passHash')";
+                        $insertarUsuario = "INSERT INTO usuario (Id_Rol, Nombre_Usuario, Direccion, Telefono, Emaill, Contraseña) 
+                                        VALUES 
+                                        (2, '$name'
+                                        , '$address'
+                                        , '$phone'
+                                        , '$email'
+                                        , '$password')";
 
-        $ejecutarInsertar=mysqli_query($con, $insertarUsuario);
-        if(!$ejecutarInsertar)
-        {
-          echo "Error en insercion";
-        }    
-      }
-    ?>
+                        $ejecutarInsertar = mysqli_query($con, $insertarUsuario);
+                        if (!$ejecutarInsertar) {
+                            echo "Error en insercion";
+                        }
+                    }
+                    ?>
 
                     <div class="signup-image">
                         <figure><img src="ingreso/images/signup-image.jpg" alt="sing up image"></figure>
@@ -100,4 +100,5 @@
     <script src="ingreso/vendor/jquery/jquery.min.js"></script>
     <script src="ingreso/js/main.js"></script>
 </body>
+
 </html>
