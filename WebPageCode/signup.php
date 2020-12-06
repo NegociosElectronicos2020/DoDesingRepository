@@ -1,3 +1,13 @@
+<?php
+  include("conexion.php");
+  $con=conectarBD();
+
+  //echo "Se realizo la conexion exitosamente";
+  session_start();
+  if (isset($_SESSION['usuario'])) {
+	header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,33 +31,61 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">Registro</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <input type="text" name="name" id="name" placeholder="Tu nombre" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="address"><i class="zmdi zmdi-home"></i></label>
+                                <input type="text" name="address" id="address" placeholder="Direccion" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone"><i class="zmdi zmdi-phone"></i></label>
+                                <input type="text" name="phone" id="phone" placeholder="Telefono" required/>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input type="email" name="email" id="email" placeholder="E-mail  Ej. user@ejemplo.com" required/>
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <input type="password" name="pass" id="pass" placeholder="Contraseña" required/>
                             </div>
-                            <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                            </div>
+                            
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Registrar"/>
                             </div>
                         </form>
                     </div>
+
+                    <?php
+      if(isset($_POST['signup']))
+      {
+        $name=$_POST["name"];
+        $address=$_POST["address"];
+        $phone=$_POST["phone"];
+        $email=$_POST["email"];
+        $pass=$_POST["pass"];   
+        $passHash = md5($pass);     
+
+        $insertarUsuario="INSERT INTO usuario (Id_Rol, Nombre_Usuario, Direccion, Telefono, Emaill, Contraseña) 
+                                                        VALUES 
+                                                        (2, '$name'
+                                                        , '$address'
+                                                        , '$phone'
+                                                        , '$email'
+                                                        , '$passHash')";
+
+        $ejecutarInsertar=mysqli_query($con, $insertarUsuario);
+        if(!$ejecutarInsertar)
+        {
+          echo "Error en insercion";
+        }    
+      }
+    ?>
+
                     <div class="signup-image">
                         <figure><img src="ingreso/images/signup-image.jpg" alt="sing up image"></figure>
                         <a href="login.php" class="signup-image-link">Ya me encuentro registrado</a>

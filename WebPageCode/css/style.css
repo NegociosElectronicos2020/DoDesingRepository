@@ -29,20 +29,20 @@ input:hover, input:focus, .form-control:focus {
 
 /* line 21, ../../01 cl html template/187 Shotgear Photography/187 Shotgear Photography Html/sass/_common.scss */
 .section_padding {
-  padding: 140px 0px;
+  padding: 70px 0px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   /* line 21, ../../01 cl html template/187 Shotgear Photography/187 Shotgear Photography Html/sass/_common.scss */
   .section_padding {
-    padding: 100px 0px;
+    padding: 60px 0px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* line 21, ../../01 cl html template/187 Shotgear Photography/187 Shotgear Photography Html/sass/_common.scss */
   .section_padding {
-    padding: 70px 0px;
+    padding: 40px 0px;
   }
 }
 

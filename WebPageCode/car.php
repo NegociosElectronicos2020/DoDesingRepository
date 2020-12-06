@@ -1,5 +1,19 @@
-<!doctype html>
-<html lang="zxx">
+<?php
+  include("conexion.php");
+  $con=conectarBD();
+
+  //echo "Se realizo la conexion exitosamente";
+
+session_start();
+if (isset($_SESSION['usuario'])) {
+	header('Location: car.php');
+} else {
+	header('Location: login.php');
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->

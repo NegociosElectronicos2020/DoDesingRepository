@@ -20,31 +20,12 @@
   <link rel="stylesheet" href="galeria2/css/style.css">
   <div class="container-fluid" data-aos="fade" data-aos-delay="500">
       <div class="row">
-        <div class="col-lg-4">
 
+      <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Nature</h2>
-              <a href="shop.php" class="btn btn-outline-white py-2 px-4">More Photos</a>
-            </div>
-            <img src="galeria2/images/img_1.jpg" alt="Image" class="img-fluid">
-          </div>
-
-        </div>
-        <div class="col-lg-4">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3">Portrait</h2>
-              <a href="shop.php" class="btn btn-outline-white py-2 px-4">More Photos</a>
-            </div>
-            <img src="galeria2/images/img_2.jpg" alt="Image" class="img-fluid">
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3">People</h2>
-              <a href="shop.php" class="btn btn-outline-white py-2 px-4">More Photos</a>
+              <h2 class="mb-3">Mockups</h2>
+              <a href="shop.php" class="btn btn-outline-white py-2 px-4">Mas..</a>
             </div>
             <img src="galeria2/images/img_3.jpg" alt="Image" class="img-fluid">
           </div>
@@ -53,38 +34,36 @@
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Architecture</h2>
-              <a href="shop.php" class="btn btn-outline-white py-2 px-4">More Photos</a>
+              <h2 class="mb-3">Wallpapers</h2>
+              <a href="shop.php" class="btn btn-outline-white py-2 px-4">Mas...</a>
             </div>
-            <img src="galeria2/images/img_4.jpg" alt="Image" class="img-fluid">
+            <img src="Vectores/wallpaper.jpg" alt="Image" class="img-fluid">
           </div>
         </div>
-
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Animals</h2>
-              <a href="shop.php" class="btn btn-outline-white py-2 px-4">More Photos</a>
+              <h2 class="mb-3">Retrato</h2>
+              <a href="shop.php" class="btn btn-outline-white py-2 px-4">Mas...</a>
             </div>
-            <img src="galeria2/images/img_5.jpg" alt="Image" class="img-fluid">
+            <img src="galeria2/images2/img_2.jpg" alt="Image" class="img-fluid">
           </div>
         </div>
-
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Sports</h2>
-              <a href="shop.php" class="btn btn-outline-white py-2 px-4">More Photos</a>
+              <h2 class="mb-3">Naturaleza</h2>
+              <a href="shop.php" class="btn btn-outline-white py-2 px-4">Mas...</a>
             </div>
-            <img src="galeria2/images/img_6.jpg" alt="Image" class="img-fluid">
+            <img src="galeria2/images2/img_1.jpg" alt="Image" class="img-fluid">
           </div>
         </div>
-
+        
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Travel</h2>
-              <a href="shop.php" class="btn btn-outline-white py-2 px-4">More Photos</a>
+              <h2 class="mb-3">Personas</h2>
+              <a href="shop.php" class="btn btn-outline-white py-2 px-4">Mas...</a>
             </div>
             <img src="galeria2/images/img_7.jpg" alt="Image" class="img-fluid">
           </div>
@@ -93,29 +72,44 @@
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">People</h2>
-              <a href="shop.php" class="btn btn-outline-white py-2 px-4">More Photos</a>
+              <h2 class="mb-3">Arquitectura</h2>
+              <a href="shop.php" class="btn btn-outline-white py-2 px-4">Mas...</a>
             </div>
-            <img src="galeria2/images/img_3.jpg" alt="Image" class="img-fluid">
+            <img src="galeria2/images2/img_4.jpg" alt="Image" class="img-fluid">
           </div>
         </div>
 
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Architecture</h2>
-              <a href="shop.php" class="btn btn-outline-white py-2 px-4">More Photos</a>
+              <h2 class="mb-3">Animales</h2>
+              <a href="shop.php" class="btn btn-outline-white py-2 px-4">Mas...</a>
             </div>
-            <img src="galeria2/images/img_4.jpg" alt="Image" class="img-fluid">
+            <img src="galeria2/images2/img_5.jpg" alt="Image" class="img-fluid">
           </div>
         </div>
 
-      </div>
-    </div>
-    
+        <div class="col-lg-4">
+          <div class="image-wrap-2">
+            <div class="image-info">
+              <h2 class="mb-3">Deportes</h2>
+              <a href="shop.php" class="btn btn-outline-white py-2 px-4">Mas...</a>
+            </div>
+            <img src="galeria2/images2/img_6.jpg" alt="Image" class="img-fluid">
+          </div>
+        </div>
 
-    
-    
+        <div class="col-lg-4">
+          <div class="image-wrap-2">
+            <div class="image-info">
+              <h2 class="mb-3">Viajes</h2>
+              <a href="shop.php" class="btn btn-outline-white py-2 px-4">Mas...</a>
+            </div>
+            <img src="galeria2/images2/img_7.jpg" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>  
   </div>
 
   <script src="galeria2/s/jquery-3.3.1.min.js"></script>

@@ -1,5 +1,11 @@
-<!doctype html>
-<html lang="zxx">
+<?php
+  include("conexion.php");
+  $con=conectarBD();
+
+  //echo "Se realizo la conexion exitosamente";
+?>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
@@ -35,10 +41,12 @@
     <!-- Header part end-->
 
     <br>
-    <form action="#">
+    <div class="row align-items-center justify-content-center">
+    <div class="col-lg-8">
+    <form action="buscador.php" method="POST">
         <div class="form-group">
         <div class="input-group ">
-        <input type="text" class="form-control" placeholder='Buscar imagen'
+        <input type="text" class="form-control" name="busqueda" placeholder='Buscar imagen'
             onfocus="this.placeholder = ''"
             onblur="this.placeholder = 'Buscar imagen'">
          <div class="input-group-append">
@@ -47,8 +55,9 @@
         </div>
         </div>
         </div>
-        
-        </form>
+    </form>
+    </div>
+    </div>
 
     <!-- gallery_part part start-->
     
@@ -69,7 +78,7 @@
                             recursos graficos que ayuden a 
                             las personas creativas hacer de sus ideas realidad.
                         </p>
-                        <a href="about.php" class="btn_2">read more</a>
+                        <a href="about.php" class="btn_2">Leer mas...</a>
                     </div>
                 </div>
             </div>

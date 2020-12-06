@@ -33,8 +33,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="about.php">Nosotros</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.php">Contactanos</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="contact.php" id="navbarDropdownpro"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Contactanos
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownpro">
+                                        <a class="dropdown-item" href="faq.php">FAQ</a>                                                                              
+                                    </div>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="signup.php"><i class="fas fa-user fa-x"></i></a>
