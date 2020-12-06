@@ -68,15 +68,15 @@
         $phone=$_POST["phone"];
         $email=$_POST["email"];
         $pass=$_POST["pass"];   
-        $passHash = md5($pass);     
+      $password = hash('sha512', $pass);
 
-        $insertarUsuario="INSERT INTO usuario (Id_Rol, Nombre_Usuario, Direccion, Telefono, Emaill, Contraseña) 
+                        $insertarUsuario = "INSERT INTO usuario (Id_Rol, Nombre_Usuario, Direccion, Telefono, Emaill, Contraseña) 
                                                         VALUES 
                                                         (2, '$name'
                                                         , '$address'
                                                         , '$phone'
                                                         , '$email'
-                                                        , '$passHash')";
+                                                        , '$password')";
 
         $ejecutarInsertar=mysqli_query($con, $insertarUsuario);
         if(!$ejecutarInsertar)
