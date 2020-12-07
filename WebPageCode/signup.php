@@ -73,7 +73,7 @@ if (isset($_SESSION['usuario'])) {
 
                         $insertarUsuario = "INSERT INTO usuario (Rol, Nombre_Usuario, Direccion, Telefono, Emaill, Contraseña) 
                                         VALUES 
-                                        ('Admin', '$name'
+                                        ('Cliente', '$name'
                                         , '$address'
                                         , '$phone'
                                         , '$email'

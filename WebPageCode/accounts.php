@@ -46,6 +46,64 @@
                 <option value="2">Cliente</option>
               </select>
             </div>
+
+            <div class="tm-product-table-container">
+              <table class="table table-hover tm-table-small tm-product-table">
+                <thead>
+                  <tr>                   
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php
+                  $consulta="SELECT * FROM usuario";
+                  $ejecutarConsulta= mysqli_query($con, $consulta);
+                  $verFilas=mysqli_num_rows($ejecutarConsulta);
+                  $fila=mysqli_fetch_array($ejecutarConsulta);
+
+                  if(!$ejecutarConsulta)
+                  {
+                    echo "Error en la consulta";
+                  }
+                  else{
+                    if($verFilas<1)
+                    {
+                      echo "<tr><td>Sin registros</td></tr>";
+                    }else{
+                      for($i=0; $i<=$fila;$i++){
+                        echo 
+                        '                        
+                        <tr>                       
+                        <td class="tm-product-name">'.$fila[2].'</td>
+                        <td class="tm-product-rol">'.$fila[1].'</td>
+                        <td class="tm-product-correo">'.$fila[5].'</td>
+                        <td class="tm-product-tel">'.$fila[4].'</td>
+                        <td class="text-center">
+                          <a href="" class="tm-product-delete-link">
+                            <i class="fas fa-edit tm-product-delete-icon"></i>                            
+                          </a>                         
+                        </td>
+                        <td class="text-center">
+                        <a href="#" class="tm-product-delete-link">
+                          <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                        </a>                         
+                        </td>
+                        </tr>  
+                        
+                        ';
+                        $fila=mysqli_fetch_array($ejecutarConsulta);
+                      }
+                    }
+                  }
+                  ?>
+                </tbody>
+              </table>
+            </div>
           </div>       
         </div>
       </div>
