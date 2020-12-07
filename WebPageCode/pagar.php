@@ -1,11 +1,5 @@
 <?php 
-include("conexion.php");
-$con=conectarBD();
 
-//echo "Se realizo la conexion exitosamente";
-session_start();
-  if (!isset($_SESSION['usuario'])) {
-    header('Location: login.php');}
 if(!isset($_GET['producto'], $_GET['precio'])) { exit("Error dentro de los datos del producto");}
  
 use PayPal\Api\Amount;
