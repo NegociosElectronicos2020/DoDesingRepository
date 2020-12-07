@@ -137,19 +137,22 @@
                     {
                       echo "<tr><td>Sin registros</td></tr>";
                     }else{
-                      for($i=0; $i<2;$i++){
+                      for($i=0; $i<3;$i++){
                         if($i==0){
                         $cat=$fila[1];
                         }
                         if($i==1){
                           $cat1=$fila[1];
-                          }                                             
+                          }    
+                          if($i==2){
+                            $cat2=$fila[1];
+                            }                                           
                         $fila=mysqli_fetch_array($ejecutarConsulta);
                       }
                     }
                   }
 
-                  $consulta="SELECT * FROM categoriaxproducto WHERE Id_Categoria=$cat OR Id_Categoria=$cat1 AND Id_Producto!=$producto";
+                  $consulta="SELECT * FROM categoriaxproducto WHERE (Id_Producto<>$producto) AND (Id_Categoria=$cat) OR (Id_Categoria=$cat1)";
                   $ejecutarConsulta= mysqli_query($con, $consulta);
                   $verFilas=mysqli_num_rows($ejecutarConsulta);
                   $fila=mysqli_fetch_array($ejecutarConsulta);
@@ -207,7 +210,7 @@
     
      
     <?php
-                  $consulta="SELECT * FROM producto WHERE Id_Producto='$prod' OR Id_Producto='$prod2' OR Id_Producto='$prod2'";
+                  $consulta="SELECT * FROM producto WHERE Id_Producto='$prod' OR Id_Producto='$prod2' OR Id_Producto='$prod3'";
                   $ejecutarConsulta= mysqli_query($con, $consulta);
                   $verFilas=mysqli_num_rows($ejecutarConsulta);
                   $fila=mysqli_fetch_array($ejecutarConsulta);
