@@ -126,14 +126,9 @@
                         '<tr>
                         <td class="tm-product-name">'.$fila[1].'</td>
                         <td class="text-center">
-                          <a href="edit-cat.php?cat='.$fila[0].'" class="tm-product-delete-link">
-                            <i class="fas fas fa-edit tm-product-delete-icon"></i>
-                          </a>                         
-                        </td>
-                        <td class="text-center">
                           <a href="delete-cat.php?cat='.$fila[0].'" class="tm-product-delete-link">
                             <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                          </a>                         
+                          </a>
                         </td>
                         </tr>  
                         ';

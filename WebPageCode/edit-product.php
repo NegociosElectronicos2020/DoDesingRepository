@@ -54,45 +54,12 @@
                         $nombre=$fila[1];
                         $descripcion=$fila[2];
                         $imagen=$fila[3];
-                        $precio=$fila[5];                  
+                        $precio=$fila[6];                  
                         $fila=mysqli_fetch_array($ejecutarConsulta);
                       }
                     }
                   }
-
-                  $consulta="SELECT * FROM categoriaxproducto WHERE Id_Producto='$producto'";
-                  $ejecutarConsulta= mysqli_query($con, $consulta);
-                  $verFilas=mysqli_num_rows($ejecutarConsulta);
-                  $fila=mysqli_fetch_array($ejecutarConsulta);
-
-                  if(!$ejecutarConsulta)
-                  {
-                    echo "Error en la consulta";
-                  }
-                  else{
-                    if($verFilas<1)
-                    {
-                      echo "<tr><td>Sin registros</td></tr>";
-                    }else{
-                      for($i=0; $i<=$fila;$i++){
-                        if($i==0)
-                        {
-                          $cat1=$fila[1];                         
-                        }
-                        if($i==1)
-                        {
-                          $cat2=$fila[1];
-                        }
-                        if($i==2)
-                        {
-                          $cat3=$fila[1];
-                        }
-                        $fila=mysqli_fetch_array($ejecutarConsulta);
-                      }                      
-                    }
-                  }
-
-  ?>
+                  ?>
 
 <div class="container tm-mt-big tm-mb-big">
       <div class="row">
@@ -127,8 +94,9 @@
                     <textarea
                       name="description"
                       class="form-control validate"
-                      rows="3"                                        
-                    ><?php echo $descripcion?>  </textarea>
+                      rows="3"
+                      value="<?php echo $descripcion?>"                      
+                    ></textarea>
                   </div>
                   <div class="form-group mb-3">
                     <label
@@ -140,30 +108,7 @@
                       id="category"
                       name="category1"
                     >                  
-                      <option value="<?php $cat1 ?>">
-                    <?php
-                      $consulta="SELECT * FROM categoria WHERE Id_Categoria='$cat1'";
-                      $ejecutarConsulta= mysqli_query($con, $consulta);
-                      $verFilas=mysqli_num_rows($ejecutarConsulta);
-                      $fila=mysqli_fetch_array($ejecutarConsulta);
-
-                      if(!$ejecutarConsulta)
-                      {
-                        echo "Error en la consulta";
-                      }
-                      else{
-                      if($verFilas<1)
-                      {
-                        echo "<tr><td>Sin registros</td></tr>";
-                      }else{
-                        for($i=0; $i<=$fila;$i++){
-                        echo $fila[1];
-                        $fila=mysqli_fetch_array($ejecutarConsulta);
-                      }
-                      }
-                    }
-                    ?>
-                      </option>
+                      <option></option>
 
                       <?php
                   $consulta="SELECT * FROM categoria";
@@ -203,30 +148,7 @@
                       id="category"
                       name="category2"
                     >                  
-                      <option>
-                      <?php
-                  $consulta="SELECT * FROM categoria WHERE Id_Categoria='$cat2'";
-                  $ejecutarConsulta= mysqli_query($con, $consulta);
-                  $verFilas=mysqli_num_rows($ejecutarConsulta);
-                  $fila=mysqli_fetch_array($ejecutarConsulta);
-
-                  if(!$ejecutarConsulta)
-                  {
-                    echo "Error en la consulta";
-                  }
-                  else{
-                    if($verFilas<1)
-                    {
-                      echo "<tr><td>Sin registros</td></tr>";
-                    }else{
-                      for($i=0; $i<=$fila;$i++){
-                        echo $fila[1];
-                        $fila=mysqli_fetch_array($ejecutarConsulta);
-                      }
-                    }
-                  }
-                  ?>
-                      </option>
+                      <option>Seleccionar categoria</option>
 
                       <?php
                   $consulta="SELECT * FROM categoria";
@@ -266,30 +188,7 @@
                       id="category"
                       name="category3"
                     >                  
-                      <option>
-                      <?php
-                  $consulta="SELECT * FROM categoria WHERE Id_Categoria='$cat3'";
-                  $ejecutarConsulta= mysqli_query($con, $consulta);
-                  $verFilas=mysqli_num_rows($ejecutarConsulta);
-                  $fila=mysqli_fetch_array($ejecutarConsulta);
-
-                  if(!$ejecutarConsulta)
-                  {
-                    echo "Error en la consulta";
-                  }
-                  else{
-                    if($verFilas<1)
-                    {
-                      echo "<tr><td>Sin registros</td></tr>";
-                    }else{
-                      for($i=0; $i<=$fila;$i++){
-                        echo $fila[1];
-                        $fila=mysqli_fetch_array($ejecutarConsulta);
-                      }
-                    }
-                  }
-                  ?>
-                      </option>
+                      <option>Seleccionar categoria</option>
 
                       <?php
                   $consulta="SELECT * FROM categoria";
@@ -348,13 +247,13 @@
                       name="image"
                       type="text"
                       class="form-control validate"
-                      value="<?php echo $imagen?>"                     
+                      value="<?php echo $imagen?>"
+                     
                     />
                   </div>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-block text-uppercase" name="editarProducto">Actualizar producto</button> 
-                <button type="button" class="btn btn-primary btn-block text-uppercase" href="products.php">Cancelar</button>       
+                <button type="submit" class="btn btn-primary btn-block text-uppercase" name="registrarProducto">Actualizar producto</button>
               </div>
             </form>
             </div>
@@ -362,7 +261,7 @@
         </div>
       </div>
     </div>
-    
+    ?>
     <script src="admin/js/jquery-3.3.1.min.js"></script>
     <!-- https://jquery.com/download/ -->
     <script src="admin/jquery-ui-datepicker/jquery-ui.min.js"></script>
