@@ -112,7 +112,7 @@
     						<h3><a href="image.php?producto='.$fila[0].'">'.$fila[1].'</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="price-sale">$'.$fila[6].'</span></p>
+		    						<p class="price"><span class="price-sale">$'.$fila[5].'</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">

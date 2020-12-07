@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-12-2020 a las 03:37:04
+-- Tiempo de generación: 07-12-2020 a las 02:31:21
 -- Versión del servidor: 10.4.8-MariaDB-log
 -- Versión de PHP: 7.3.11
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `dotdesign`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calificaciones`
+--
+
+CREATE TABLE `calificaciones` (
+  `Id_Usuario` int(11) NOT NULL,
+  `Id_Producto` int(11) NOT NULL,
+  `Calificacion` decimal(1,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -57,17 +69,6 @@ CREATE TABLE `categoria` (
   `Descripcion_Categoria` varchar(60) COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
---
--- Volcado de datos para la tabla `categoria`
---
-
-INSERT INTO `categoria` (`Id_Categoria`, `Nombre_Categoria`, `Descripcion_Categoria`) VALUES
-(2, 'Fotos', '....'),
-(3, 'Iconos', '...'),
-(4, 'Vectores', '...'),
-(5, 'Gratis', 'Fotos, vectores e iconos gratuitos'),
-(6, 'Postres', 'Fotos, vectores e iconos relacionados con pos');
-
 -- --------------------------------------------------------
 
 --
@@ -79,15 +80,6 @@ CREATE TABLE `categoriaxproducto` (
   `Id_Categoria` int(11) NOT NULL,
   `Id_Producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Volcado de datos para la tabla `categoriaxproducto`
---
-
-INSERT INTO `categoriaxproducto` (`Id_CatxPro`, `Id_Categoria`, `Id_Producto`) VALUES
-(1, 2, 1),
-(2, 5, 1),
-(3, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -126,44 +118,16 @@ CREATE TABLE `producto` (
   `Descr_Producto` varchar(45) COLLATE utf8mb4_bin NOT NULL,
   `Imagen_Producto` varchar(45) COLLATE utf8mb4_bin NOT NULL,
   `Vistas` int(11) NOT NULL,
-  `Calificacion` int(11) NOT NULL,
   `Precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
---
--- Volcado de datos para la tabla `producto`
---
-
-INSERT INTO `producto` (`Id_Producto`, `Nombre_Producto`, `Descr_Producto`, `Imagen_Producto`, `Vistas`, `Calificacion`, `Precio`) VALUES
-(1, 'Pastel de Chocolate', 'Pastel de cumpleaños de un piso', 'Fotos/015 - Pastel de Chocolate.jpg', 0, 5, 0);
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `rol`
+-- Estructura de tabla para la tabla `suscripciones`
 --
 
-CREATE TABLE `rol` (
-  `Id_Rol` int(11) NOT NULL,
-  `Nombre_Rol` varchar(45) COLLATE utf8mb4_bin NOT NULL,
-  `Descr_Rol` varchar(60) COLLATE utf8mb4_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Volcado de datos para la tabla `rol`
---
-
-INSERT INTO `rol` (`Id_Rol`, `Nombre_Rol`, `Descr_Rol`) VALUES
-(1, 'Administrador', 'Encargado de control de la pagina'),
-(2, 'Cliente', 'Usuario sin privilegios especiales dentro de la pagina');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `suscripcion`
---
-
-CREATE TABLE `suscripcion` (
+CREATE TABLE `suscripciones` (
   `Id_Suscripcion` int(11) NOT NULL,
   `Id_Usuario` int(11) NOT NULL,
   `Fecha` date NOT NULL,
@@ -179,7 +143,7 @@ CREATE TABLE `suscripcion` (
 
 CREATE TABLE `usuario` (
   `Id_Usuario` int(11) NOT NULL,
-  `Id_Rol` int(11) NOT NULL,
+  `Rol` varchar(45) COLLATE utf8mb4_bin NOT NULL,
   `Nombre_Usuario` varchar(45) COLLATE utf8mb4_bin NOT NULL,
   `Direccion` varchar(70) COLLATE utf8mb4_bin NOT NULL,
   `Telefono` varchar(45) COLLATE utf8mb4_bin NOT NULL,
@@ -191,8 +155,8 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Id_Usuario`, `Id_Rol`, `Nombre_Usuario`, `Direccion`, `Telefono`, `Emaill`, `Contraseña`) VALUES
-(1, 2, 'Cinthya Mata', 'Chicharo #201 ', '449 156 3205', 'mata.sanchez.cinthya2016@gmail.com', '7d84fe1a0c159c16cc864277b1be64a2');
+INSERT INTO `usuario` (`Id_Usuario`, `Rol`, `Nombre_Usuario`, `Direccion`, `Telefono`, `Emaill`, `Contraseña`) VALUES
+(8, 'Admin', 'Cinthya Mata', 'Chicharo #201 ', '449 156 3205', 'mata.sanchez.cinthya2016@gmail.com', 'b32ac61dbeac146e3076d10602434e9d2527a9eba924f');
 
 -- --------------------------------------------------------
 
@@ -227,17 +191,27 @@ CREATE TABLE `ventasxproducto` (
 --
 
 --
+-- Indices de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD KEY `Id_Usuario` (`Id_Usuario`,`Id_Producto`),
+  ADD KEY `Id_Producto` (`Id_Producto`);
+
+--
 -- Indices de la tabla `carrito`
 --
 ALTER TABLE `carrito`
   ADD PRIMARY KEY (`Id_Carrito`),
-  ADD KEY `IdUsuarioCar_fk` (`Id_Usuario`);
+  ADD KEY `IdUsuarioCar_fk` (`Id_Usuario`),
+  ADD KEY `Id_Usuario` (`Id_Usuario`);
 
 --
 -- Indices de la tabla `carritoxproducto`
 --
 ALTER TABLE `carritoxproducto`
-  ADD PRIMARY KEY (`Id_CarxPro`);
+  ADD PRIMARY KEY (`Id_CarxPro`),
+  ADD KEY `Id_Carrito` (`Id_Carrito`,`Id_Producto`),
+  ADD KEY `Id_Producto` (`Id_Producto`);
 
 --
 -- Indices de la tabla `categoria`
@@ -249,20 +223,25 @@ ALTER TABLE `categoria`
 -- Indices de la tabla `categoriaxproducto`
 --
 ALTER TABLE `categoriaxproducto`
-  ADD PRIMARY KEY (`Id_CatxPro`);
+  ADD PRIMARY KEY (`Id_CatxPro`),
+  ADD KEY `Id_Categoria` (`Id_Categoria`,`Id_Producto`),
+  ADD KEY `Id_Producto` (`Id_Producto`);
 
 --
 -- Indices de la tabla `comentario`
 --
 ALTER TABLE `comentario`
   ADD PRIMARY KEY (`Id_Comentario`),
-  ADD KEY `Id_Usuario` (`Id_Usuario`);
+  ADD KEY `Id_Usuario` (`Id_Usuario`),
+  ADD KEY `Id_Usuario_2` (`Id_Usuario`);
 
 --
 -- Indices de la tabla `comentarioxproducto`
 --
 ALTER TABLE `comentarioxproducto`
-  ADD PRIMARY KEY (`Id_CxP`);
+  ADD PRIMARY KEY (`Id_CxP`),
+  ADD KEY `Id_Comentario` (`Id_Comentario`,`Id_Producto`),
+  ADD KEY `Id_Producto` (`Id_Producto`);
 
 --
 -- Indices de la tabla `producto`
@@ -271,16 +250,11 @@ ALTER TABLE `producto`
   ADD PRIMARY KEY (`Id_Producto`);
 
 --
--- Indices de la tabla `rol`
+-- Indices de la tabla `suscripciones`
 --
-ALTER TABLE `rol`
-  ADD PRIMARY KEY (`Id_Rol`);
-
---
--- Indices de la tabla `suscripcion`
---
-ALTER TABLE `suscripcion`
-  ADD PRIMARY KEY (`Id_Suscripcion`);
+ALTER TABLE `suscripciones`
+  ADD PRIMARY KEY (`Id_Suscripcion`),
+  ADD KEY `Id_Usuario` (`Id_Usuario`);
 
 --
 -- Indices de la tabla `usuario`
@@ -299,7 +273,9 @@ ALTER TABLE `venta`
 -- Indices de la tabla `ventasxproducto`
 --
 ALTER TABLE `ventasxproducto`
-  ADD PRIMARY KEY (`Id_VxP`);
+  ADD PRIMARY KEY (`Id_VxP`),
+  ADD KEY `Id_Venta` (`Id_Venta`,`Id_Producto`),
+  ADD KEY `Id_Producto` (`Id_Producto`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -348,22 +324,16 @@ ALTER TABLE `producto`
   MODIFY `Id_Producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `rol`
+-- AUTO_INCREMENT de la tabla `suscripciones`
 --
-ALTER TABLE `rol`
-  MODIFY `Id_Rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `suscripcion`
---
-ALTER TABLE `suscripcion`
+ALTER TABLE `suscripciones`
   MODIFY `Id_Suscripcion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
@@ -382,16 +352,63 @@ ALTER TABLE `ventasxproducto`
 --
 
 --
+-- Filtros para la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD CONSTRAINT `calificaciones_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `calificaciones_ibfk_2` FOREIGN KEY (`Id_Producto`) REFERENCES `producto` (`Id_Producto`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  ADD CONSTRAINT `IdUsuarioCar_fk` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`);
+  ADD CONSTRAINT `carrito_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `carritoxproducto`
+--
+ALTER TABLE `carritoxproducto`
+  ADD CONSTRAINT `carritoxproducto_ibfk_1` FOREIGN KEY (`Id_Producto`) REFERENCES `producto` (`Id_Producto`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `carritoxproducto_ibfk_2` FOREIGN KEY (`Id_Carrito`) REFERENCES `carrito` (`Id_Carrito`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `categoriaxproducto`
+--
+ALTER TABLE `categoriaxproducto`
+  ADD CONSTRAINT `categoriaxproducto_ibfk_1` FOREIGN KEY (`Id_Categoria`) REFERENCES `categoria` (`Id_Categoria`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `categoriaxproducto_ibfk_2` FOREIGN KEY (`Id_Producto`) REFERENCES `producto` (`Id_Producto`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `comentarioxproducto`
+--
+ALTER TABLE `comentarioxproducto`
+  ADD CONSTRAINT `comentarioxproducto_ibfk_1` FOREIGN KEY (`Id_Producto`) REFERENCES `producto` (`Id_Producto`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comentarioxproducto_ibfk_2` FOREIGN KEY (`Id_Comentario`) REFERENCES `comentario` (`Id_Comentario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `suscripciones`
+--
+ALTER TABLE `suscripciones`
+  ADD CONSTRAINT `suscripciones_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `venta`
 --
 ALTER TABLE `venta`
-  ADD CONSTRAINT `Id_UsuarioVe_fk` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`);
+  ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `ventasxproducto`
+--
+ALTER TABLE `ventasxproducto`
+  ADD CONSTRAINT `ventasxproducto_ibfk_1` FOREIGN KEY (`Id_Venta`) REFERENCES `venta` (`Id_Venta`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ventasxproducto_ibfk_2` FOREIGN KEY (`Id_Producto`) REFERENCES `producto` (`Id_Producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

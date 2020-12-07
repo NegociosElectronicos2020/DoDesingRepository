@@ -70,9 +70,9 @@
                         '                        
                         <tr>                       
                         <td class="tm-product-name">'.$fila[1].'</td>
-                        <td class="tm-product-precio">'.$fila[6].'</td>
+                        <td class="tm-product-precio">'.$fila[5].'</td>
                         <td class="tm-product-vistas">'.$fila[4].'</td>
-                        <td class="tm-product-cal">'.$fila[5].'</td>
+                        <td class="tm-product-cal">5</td>
                         <td class="text-center">
                           <a href="edit-product.php?producto='.$fila[0].'" class="tm-product-delete-link">
                             <i class="fas fa-edit tm-product-delete-icon"></i>                            
@@ -126,7 +126,7 @@
                         '<tr>
                         <td class="tm-product-name">'.$fila[1].'</td>
                         <td class="text-center">
-                          <a href="#" class="tm-product-delete-link">
+                          <a href="delete-cat.php?cat='.$fila[0].'" class="tm-product-delete-link">
                             <i class="far fa-trash-alt tm-product-delete-icon"></i>
                           </a>
                         </td>
@@ -142,14 +142,14 @@
               </table>
             </div>
             <!-- table container -->
-            <form action="" class="tm-edit-form" method="POST">
+            <form action="add-cat.php" class="tm-edit-form" method="POST">
                   <div class="form-group mb-12">
                     <label
                       for="name"
                       >Nombre de categoria
                     </label>
                     <input
-                      id="name"
+                      
                       name="name"
                       type="text"
                       class="form-control validate"
@@ -171,27 +171,7 @@
               <div class="col-12">
                 <button type="submit" class="btn btn-primary btn-block text-uppercase" name="registrarCat">Agregar Categoria</button>
               </div>
-            </form>
-            
-            <?php
-      if(isset($_POST['registrarCat']))
-      {
-        $name=$_POST["name"];
-        $description=$_POST["description"];
-        
-        $insertarCat="INSERT INTO categoria (Nombre_Categoria, Descrpcion_Categoria) 
-                                                        VALUES 
-                                                        ('$name'
-                                                        , '$description')";
-
-        $ejecutarInsertar=mysqli_query($con, $insertarCat);
-        if(!$ejecutarInsertar)
-        {
-          echo "Error en insercion";
-        }       
-      }
-    ?>
-            
+            </form>                      
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@
   //echo "Se realizo la conexion exitosamente";
   session_start();
     if (isset($_SESSION['usuario'])) {
-	header('Location: index.php');
+	header('Location: profile.php');
 }
 ?>
 <!DOCTYPE html>
@@ -51,6 +51,7 @@
                             <div class="form-group form-button">
                                 <input type="submit" name="login" id="login" class="form-submit" value="Entrar"/>
                             </div>
+                           
                         </form>                       
                     </div>
                 </div>
@@ -63,19 +64,22 @@
       {
         $usuario = $_POST['usuario'];
         $password = $_POST['password'];
-        $password = md5($password);       
+        $pass = hash('sha512', $password);       
 
-        $inicio="INSERT INTO usuario (Nombre_usuario, Contraseña) 
-                                                        VALUES 
-                                                        ('$usuario'
-                                                        , '$password')";
+        $inicio="SELECT * FROM usuario WHERE Nombre_Usuario='$usuario' AND Contraseña='$pass')";
 
         $ejecutarInicio=mysqli_query($con, $inicio);
         if($ejecutarInicio)
         {
             $_SESSION['usuario'] = $usuario;
             header('Location: index.php');
-        }       
+        }    else
+        {
+            echo'<script type="text/javascript">
+        alert("Contraseña o usuario incorrecto");       
+        </script>';
+        }
+       
       }
     ?>
 

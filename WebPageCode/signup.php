@@ -5,7 +5,7 @@ $con = conectarBD();
 //echo "Se realizo la conexion exitosamente";
 session_start();
 if (isset($_SESSION['usuario'])) {
-    header('Location: index.php');
+    header('Location: profile.php');
 }
 ?>
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ if (isset($_SESSION['usuario'])) {
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Tu nombre" required />
+                                <input type="text" name="name" id="name" placeholder="Nombre de usuario" required />
                             </div>
                             <div class="form-group">
                                 <label for="address"><i class="zmdi zmdi-home"></i></label>
@@ -71,9 +71,9 @@ if (isset($_SESSION['usuario'])) {
                         $pass = $_POST["pass"];
                         $password = hash('sha512', $pass);
 
-                        $insertarUsuario = "INSERT INTO usuario (Id_Rol, Nombre_Usuario, Direccion, Telefono, Emaill, Contraseña) 
+                        $insertarUsuario = "INSERT INTO usuario (Rol, Nombre_Usuario, Direccion, Telefono, Emaill, Contraseña) 
                                         VALUES 
-                                        (2, '$name'
+                                        ('Admin', '$name'
                                         , '$address'
                                         , '$phone'
                                         , '$email'
@@ -82,6 +82,9 @@ if (isset($_SESSION['usuario'])) {
                         $ejecutarInsertar = mysqli_query($con, $insertarUsuario);
                         if (!$ejecutarInsertar) {
                             echo "Error en insercion";
+                        }else
+                        {
+                            header('Location: login.php');
                         }
                     }
                     ?>

@@ -2,6 +2,13 @@
   include("conexion.php");
   $con=conectarBD();
   //echo "Se realizo la conexion exitosamente";
+  session_start();
+  if (!isset($_SESSION['usuario'])) {
+    header('Location: login.php');    
+    } else
+    {
+        $usuario=$_SESSION['usuario'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -47,85 +54,88 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="breadcrumb_iner text-center">
+          <div class="breadcrumb_iner text-right">
             <div class="breadcrumb_iner_item">
-              <h2>Informacion de usuario</h2>
-            </div>
-          </div>
+              <h2>Informacion de usuario</h2> 
+            </div>            
+            <div class="col-sm-12">
+        <a href="salir.php" class="btn_2">Cerrar Sesión</a> 
         </div>
+          </div>
+        </div>        
       </div>
     </div>
   </section>
   <br>
-<div class="row align-items-center justify-content-center">
-<div class="col-lg-4">
+  <?php
+                  $consulta="SELECT * FROM usuario WHERE Nombre_Usuario='$usuario'";
+                  $ejecutarConsulta= mysqli_query($con, $consulta);
+                  $verFilas=mysqli_num_rows($ejecutarConsulta);
+                  $fila=mysqli_fetch_array($ejecutarConsulta);
 
+                  if(!$ejecutarConsulta)
+                  {
+                    echo "Error en la consulta";
+                  }
+                  else{
+                    if($verFilas<1)
+                    {
+                      echo "<tr><td>Sin registros</td></tr>";
+                    }else{
+                      for($i=0; $i<=$fila;$i++){
+                        echo 
+                        ' 
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-4">                  
             <form method="post">
                 <div class="row">                
                     <div class="col-md-12">
                         <div class="profile-head">
                                     <h5>
-                                        Kshiti Ghelani
+                                       <?php echo $usuario?>
                                     </h5>
                                     <h6>
-                                        Web Developer and Designer
+                                    '.$fila[1].'
                                     </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                    
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Información</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Estadisticas</a>
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                   
-                </div>
+                    </div>                   
+                </div>                
                     <div class="col-md-12">
                         <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">                                        
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>User Id</label>
+                                                <label>Nombre de usuario</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti123</p>
+                                                <p>'.$fila[2].'</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Name</label>
+                                                <label>Correo</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
+                                                <p>'.$fila[5].'</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Email</label>
+                                                <label>Telefono</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
+                                                <p>'.$fila[4].'</p>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>123 456 7890</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
-                                        </div>
+                                        </div>                                       
                                     </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
@@ -181,7 +191,12 @@
             </form>           
         </div>
     </div>
-
+    ';
+    $fila=mysqli_fetch_array($ejecutarConsulta);
+    }
+}
+}
+?>
 
   <!-- jquery plugins here-->
   <script src="js/jquery-1.12.1.min.js"></script>

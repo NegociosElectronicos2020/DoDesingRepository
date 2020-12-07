@@ -135,10 +135,31 @@
                     {
                       echo "<tr><td>Sin registros</td></tr>";
                     }else{
+                      for($i=0; $i<1;$i++){
+                        $cat=$fila[1];                                             
+                        $fila=mysqli_fetch_array($ejecutarConsulta);
+                      }
+                    }
+                  }
+
+                  $consulta="SELECT * FROM categoria WHERE Id_Categoria='$cat'";
+                  $ejecutarConsulta= mysqli_query($con, $consulta);
+                  $verFilas=mysqli_num_rows($ejecutarConsulta);
+                  $fila=mysqli_fetch_array($ejecutarConsulta);
+
+                  if(!$ejecutarConsulta)
+                  {
+                    echo "Error en la consulta";
+                  }
+                  else{
+                    if($verFilas<1)
+                    {
+                      echo "<tr><td>Sin registros</td></tr>";
+                    }else{
                       for($i=0; $i<=$fila;$i++){
-                        echo 
-						'
-						<div class="col-md-6 col-lg-3 ftco-animate">
+                           echo 
+                           '
+                           <div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="product">
 							<a href="#" class="img-prod"><img class="img-fluid" src="galeria2/images2/nature_small_1.jpg" alt="Colorlib Template">
 								<span class="status">30%</span>
@@ -166,15 +187,16 @@
 								</div>
 							</div>
 						</div>
-					</div>
-
-                        ';
+          </div>
+                           ';                                        
                         $fila=mysqli_fetch_array($ejecutarConsulta);
                       }
                     }
                   }
-                  ?>    			
-    			
+                  ?>  
+
+    			  
+          
     		</div>
     	</div>
     </section>
