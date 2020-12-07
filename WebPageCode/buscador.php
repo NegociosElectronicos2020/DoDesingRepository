@@ -58,31 +58,23 @@
 
     <section class="ftco-section">
     	<div class="container">
-    		<div class="row justify-content-center">
-    			<div class="col-md-10 mb-5 text-center">
-    				<ul class="product-category">
-    					<li><a href="#" class="active">Free</a></li>
-    					<li><a href="#">Fotos</a></li>
-    					<li><a href="#">Iconos</a></li>
-    					<li><a href="#">Vectores</a></li>
-              <li> 
-              <form action="buscador.php" method="POST">
-                <div class="form-group">
-                <div class="input-group ">
-                <input type="text" class="form-control" name="busqueda" placeholder='Buscar imagen'
-                onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Buscar imagen'">
-                <div class="input-group-append">
-                <button class="button rounded-1 primary-bg text-white  btn_1"
-                 type="submit"> <i class="ti-search"></i> </button>
-                </div>
-                </div>
-                </div>
-            </form>
-            </li>  	
-    		</ul>
-    	    </div>
-    		</div>
+      <div class="row align-items-center justify-content-center">
+    <div class="col-lg-8">
+    <form action="buscador.php" method="POST">
+        <div class="form-group">
+        <div class="input-group ">
+        <input type="text" class="form-control" name="busqueda" placeholder='Buscar imagen'
+            onfocus="this.placeholder = ''"
+            onblur="this.placeholder = 'Buscar imagen'">
+         <div class="input-group-append">
+            <button class="button rounded-1 primary-bg text-white  btn_1"
+            type="submit"> <i class="ti-search"></i> </button>
+        </div>
+        </div>
+        </div>
+    </form>
+    </div>
+    </div>
     		<div class="row">
     			
 

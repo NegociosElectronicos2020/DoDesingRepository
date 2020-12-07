@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2020 a las 02:31:21
+-- Tiempo de generación: 07-12-2020 a las 06:58:22
 -- Versión del servidor: 10.4.8-MariaDB-log
 -- Versión de PHP: 7.3.11
 
@@ -69,6 +69,64 @@ CREATE TABLE `categoria` (
   `Descripcion_Categoria` varchar(60) COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`Id_Categoria`, `Nombre_Categoria`, `Descripcion_Categoria`) VALUES
+(7, 'Fotos', 'Fotografías tomadas por profesionales.'),
+(8, 'Íconos', 'Pictogramas vectoriales que representan versiones reducidas '),
+(9, 'Vectores', 'Imágenes digitales creadas con objetos geométricos independi'),
+(10, 'Gratis', 'Recursos de descarga gratuita.'),
+(11, 'Pago', 'Recursos que requieren de un pago o suscripción para su uso.'),
+(12, 'Blanco y negro', 'Recursos donde la escala de color está en grises.'),
+(13, 'Negro', 'Recursos donde el color dominante es el negro.'),
+(14, 'Blanco', 'Recursos donde el color dominante es el blanco.'),
+(15, 'Rojo', 'Recursos donde el color dominante es el rojo.'),
+(16, 'Azul', 'Recursos donde el color dominante es el azul.'),
+(17, 'Verde', 'Recursos donde el color dominante es el verde.'),
+(18, 'Rosa', 'Recursos donde el color dominante es el rosa.'),
+(19, 'Morado', 'Recursos donde el color dominante es el morado.'),
+(20, 'Amarillo', 'Recursos donde el color dominante es el amarillo.'),
+(21, 'Flores', 'Recursos en los que uno de los elementos principales son flo'),
+(22, 'Rosas', 'Recursos en los que uno de los elementos principales son ros'),
+(23, 'Hojas', 'Recursos en los que uno de los elementos principales son hoj'),
+(24, 'Naturaleza', 'Recursos en los que uno de los elementos principales son ele'),
+(25, 'Árboles', 'Recursos en los que uno de los elementos principales son árb'),
+(26, 'Cerezos', 'Recursos en los que uno de los elementos principales son cer'),
+(27, 'Girasoles', 'Recursos en los que uno de los elementos principales son gir'),
+(28, 'Postres', 'Recursos en los que uno de los elementos principales son pos'),
+(29, 'Comida', 'Recursos en los que uno de los elementos principales son dis'),
+(30, 'Dulces', 'Recursos en los que uno de los elementos principales son gol'),
+(31, 'Malvaviscos', 'Recursos en los que uno de los elementos principales son mal'),
+(32, 'Rosquillas', 'Recursos en los que uno de los elementos principales son don'),
+(33, 'Pastel', 'Recursos en los que uno de los elementos principales son pas'),
+(34, 'Magdalenas', 'Recursos en los que uno de los elementos principales son mag'),
+(35, 'Frutas', 'Recursos en los que uno de los elementos principales son fru'),
+(36, 'Dibujo', 'Recursos en los que uno de los elementos principales son ele'),
+(37, 'Pintura', 'Recursos en los que uno de los elementos principales son ele'),
+(38, 'Acuarela', 'Recursos en los que uno de los elementos principales son acu'),
+(39, 'Arte', 'Recursos en los que uno de los elementos principales son dis'),
+(40, 'Juegos', 'Recursos en los que uno de los elementos principales son jue'),
+(41, 'Ajedrez', 'Recursos en los que uno de los elementos principales son pie'),
+(42, 'Dardos', 'Recursos en los que uno de los elementos principales son dar'),
+(43, 'Diana', 'Recursos en los que uno de los elementos principales son dia'),
+(44, 'Tecnología', 'Recursos en los que uno de los elementos principales son ele'),
+(45, 'Empresarios', 'Recursos en los que uno de los elementos principales son ele'),
+(46, 'Computadoras', 'Recursos en los que uno de los elementos principales son com'),
+(47, 'Presentación', 'Recursos en los que uno de los elementos principales es una '),
+(48, 'Jóvenes', 'Recursos en los que uno de los elementos principales es la a'),
+(49, 'Estadísticas', 'Recursos en los que uno de los elementos principales son est'),
+(50, 'Abstracto', 'Recursos en los que sus elementos son complicados de entende'),
+(51, 'Herramientas', 'Recursos en los que uno de los elementos principales son her'),
+(52, 'Vídeo', 'Recursos en los que uno de los elementos principales es la p'),
+(53, 'Imagen', 'Recursos en los que uno de los elementos principales es la p'),
+(54, 'Indicadores', 'Recursos en que sirven como indicadores para describir una f'),
+(55, 'Líneas', 'Recursos cuya composición resalta líneas.'),
+(56, 'Puntos', 'Recursos cuya composición resalta puntos.'),
+(57, 'Triángulos', 'Recursos cuya composición resalta triángulos.'),
+(58, 'Navidad', 'Recursos con temática navideña.');
+
 -- --------------------------------------------------------
 
 --
@@ -80,6 +138,36 @@ CREATE TABLE `categoriaxproducto` (
   `Id_Categoria` int(11) NOT NULL,
   `Id_Producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Volcado de datos para la tabla `categoriaxproducto`
+--
+
+INSERT INTO `categoriaxproducto` (`Id_CatxPro`, `Id_Categoria`, `Id_Producto`) VALUES
+(4, 7, 2),
+(7, 7, 3),
+(13, 7, 5),
+(16, 7, 6),
+(25, 8, 9),
+(22, 9, 8),
+(19, 11, 7),
+(14, 14, 5),
+(23, 17, 8),
+(10, 18, 4),
+(5, 21, 2),
+(11, 21, 4),
+(6, 24, 2),
+(12, 24, 4),
+(15, 24, 5),
+(8, 25, 3),
+(9, 26, 3),
+(24, 37, 8),
+(18, 40, 6),
+(20, 44, 7),
+(21, 46, 7),
+(27, 51, 9),
+(17, 53, 6),
+(26, 53, 9);
 
 -- --------------------------------------------------------
 
@@ -121,6 +209,20 @@ CREATE TABLE `producto` (
   `Precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`Id_Producto`, `Nombre_Producto`, `Descr_Producto`, `Imagen_Producto`, `Vistas`, `Precio`) VALUES
+(2, 'Girasoles', 'Fotografía de par de girasoles con fondo negr', 'Fotos/001 - Girasoles.jpg', 0, 50),
+(3, 'Flor de cerezo', 'Fotografía de la rama de un árbol de cerezo', 'Fotos/002 - Flor de Cerezo.jpg', 0, 70),
+(4, 'Tulipanes ', 'Fotografía de un ramo de tulipanes con fondo ', 'Fotos/003 - Tulipanes.jpg', 0, 70),
+(5, 'Tic Tac Toe de Frutas', 'Fotografía de un Tic Tac Toe hecho con rodaja', 'Fotos/005 - Tic Tac Toe de Frutas.jpg', 0, 0),
+(6, 'Rompecabezas', 'Fotografía de unas piezas de rompecabezas de ', 'Fotos/006 - Rompecabezas.jpg', 0, 80),
+(7, 'Computadora con Gráficas', 'Fotografía de una computadora que muestra dis', 'Fotos/009 - Computadora con Gráficas.jpg', 0, 100),
+(8, 'Hojas acuarela verde', 'Vector con borde cuyo patrón son hojas pintad', 'Vectores/010.jpg', 0, 150),
+(9, 'Sobre', 'Ícono de un sobre cerrado', 'Íconos/020 - Sobre.png', 0, 20);
+
 -- --------------------------------------------------------
 
 --
@@ -156,7 +258,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Id_Usuario`, `Rol`, `Nombre_Usuario`, `Direccion`, `Telefono`, `Emaill`, `Contraseña`) VALUES
-(8, 'Admin', 'Cinthya Mata', 'Chicharo #201 ', '449 156 3205', 'mata.sanchez.cinthya2016@gmail.com', 'b32ac61dbeac146e3076d10602434e9d2527a9eba924f');
+(9, 'Admin', 'Cinthya Mata', 'Chicharo #201 ', '449 156 3205', 'mata.sanchez.cinthya2016@gmail.com', 'b32ac61dbeac146e3076d10602434e9d2527a9eba924f'),
+(10, 'Admin', 'Israel Martinez', 'STEMA Condominio E-3', '449 349 1910', 'israelsaid16399@gmail.com', 'a237ee6c05bbd49f2e363b9dbe0ca5f382f2533808473');
 
 -- --------------------------------------------------------
 
@@ -297,13 +400,13 @@ ALTER TABLE `carritoxproducto`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `Id_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `categoriaxproducto`
 --
 ALTER TABLE `categoriaxproducto`
-  MODIFY `Id_CatxPro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id_CatxPro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `comentario`
@@ -321,7 +424,7 @@ ALTER TABLE `comentarioxproducto`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `Id_Producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `suscripciones`
@@ -333,7 +436,7 @@ ALTER TABLE `suscripciones`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`

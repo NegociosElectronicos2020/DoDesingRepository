@@ -24,10 +24,11 @@
                                         Imagenes
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownpro">
-                                        <a class="dropdown-item" href="shop.php">Catalogo</a>
-                                        <a class="dropdown-item" href="image.php">Info Producto</a>
-                                        <a class="dropdown-item" href="car.php">Carrito</a>
-                                        <a class="dropdown-item" href="wishlist.php">Lista de deseos</a>                                        
+                                        <a class="dropdown-item" href="shop.php">Contenido</a>
+                                        <a class="dropdown-item" href="">Fotografias</a>
+                                        <a class="dropdown-item" href="">Vectores</a>
+                                        <a class="dropdown-item" href="image.php">Premium</a>
+                                                                               
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -39,6 +40,7 @@
                                         Contactanos
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownpro">
+                                        <a class="dropdown-item" href="contact.php">Contacto</a>
                                         <a class="dropdown-item" href="faq.php">FAQ</a>                                                                              
                                     </div>
                                 </li>
