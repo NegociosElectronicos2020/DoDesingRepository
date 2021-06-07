@@ -110,9 +110,9 @@
                             <h3>$0.00 </h3>
                             <ul>
                                 <li>Contenido Gratuito</li>                                                            
-                                <li>Soporte 24/7</li>
+                                <li>24/7 Support</li>
                             </ul>
-                            <a href="Shop.php" class="btn_2">Mas...</a>
+                            <a href="#" class="btn_2">book Now</a>
                         </div>
                     </div>
                 </div>
@@ -128,9 +128,9 @@
                                 <li>Contenido Free</li>
                                 <li>Descargas limitadas</li>
                                 <li>Compra de imagenes individuales</li>                                                               
-                                <li>Soporte 24/7</li>
+                                <li>24/7 Support</li>
                             </ul>
-                            <a href="login.php" class="btn_2">Mas..</a>
+                            <a href="#" class="btn_2">book Now</a>
                         </div>
                     </div>
                 </div>
@@ -141,13 +141,13 @@
                             <p>Premium</p>
                         </div>
                         <div class="pricing_content">
-                            <h3>$150.00 <span>MXN/ mo</span></h3>
+                            <h3>$20.00 <span>/ mo</span></h3>
                             <ul>                                
                                 <li>Descargas ilimitadas</li>  
                                 <li>Acceso a todo contenido</li>                             
-                                <li>Soporte 24/7</li>
+                                <li>24/7 Support</li>
                             </ul>
-                            <a href="pagar.php?producto=Suscripcion premium & precio=150" class="btn_2">Mas..</a>
+                            <a href="#" class="btn_2">book Now</a>
                         </div>
                     </div>
                 </div>

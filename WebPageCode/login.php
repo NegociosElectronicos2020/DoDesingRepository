@@ -66,7 +66,7 @@
         $password = $_POST['password'];
         $pass = hash('sha512', $password);       
 
-        $inicio="SELECT * FROM usuario WHERE Nombre_Usuario='$usuario' AND Contraseña='$pass'";
+        $inicio="SELECT * FROM usuario WHERE Nombre_Usuario='$usuario' AND Contraseña='$pass')";
 
         $ejecutarInicio=mysqli_query($con, $inicio);
         $verFilas=mysqli_num_rows($ejecutarInicio);

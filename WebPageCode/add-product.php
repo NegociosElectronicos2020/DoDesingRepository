@@ -244,12 +244,13 @@
         $price=$_POST["price"];
         $image=$_POST["image"];
 
-        $insertarProducto="INSERT INTO producto (Nombre_Producto, Descr_Producto, Imagen_Producto, Vistas, Precio) 
+        $insertarProducto="INSERT INTO producto (Nombre_Producto, Descr_Producto, Imagen_Producto, Vistas, Calificacion, Precio) 
                                                         VALUES 
                                                         ('$name'
                                                         , '$description'
                                                         , '$image'
-                                                        , 0                                                        
+                                                        , 0
+                                                        , 5
                                                         , $price)";
 
         $ejecutarInsertar=mysqli_query($con, $insertarProducto);
@@ -262,7 +263,7 @@
         $verFilas=mysqli_num_rows($ejecutarConsulta);
         $fila=mysqli_fetch_array($ejecutarConsulta);
         $producto=$fila[0];
-       
+        echo $producto;
 
 
         $insertarCxP="INSERT INTO categoriaxproducto (Id_Categoria, Id_Producto) VALUES ($category, $producto), 
@@ -272,10 +273,6 @@
         if(!$ejecutarCategorias)
         {
           echo "Error en categorias";
-        }else{
-          echo'<script type="text/javascript">
-        alert("Producto agregado exitosamente");       
-        </script>';
         }
       }
     ?> 

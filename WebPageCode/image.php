@@ -68,7 +68,7 @@
     				<h3>'.$fila[1].'</h3>
     				<div class="rating d-flex">
 							<p class="text-left mr-4">
-								<a href="#" class="mr-2">5</a>
+								<a href="#" class="mr-2">'.$fila[5].'</a>
 								<a href="#"><span class="ion-ios-star-outline"></span></a>
 								<a href="#"><span class="ion-ios-star-outline"></span></a>
 								<a href="#"><span class="ion-ios-star-outline"></span></a>
@@ -82,7 +82,7 @@
 								<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
 							</p>
 						</div>
-    				<p class="price"><span>$'.$fila[5].'</span></p>
+    				<p class="price"><span>$'.$fila[6].'</span></p>
     				<p>'.$fila[2].'
 						</p>
 						<div class="row mt-4">
@@ -109,21 +109,19 @@
 	
 
     <section class="ftco-section">
-    <div class="container">
+    	<div class="container">
 		<div class="row justify-content-center mb-3 pb-3">
-    <div class="col-md-12 heading-section text-center ftco-animate">		  
+          <div class="col-md-12 heading-section text-center ftco-animate">		  
 		  	<span class="subheading">Productos</span>
-            <h2 class="mb-4">Productos Relacionados</h2>  
-                  
+            <h2 class="mb-4">Productos Relacionados</h2>        
           </div>
         </div>   		
     	</div>
-    
-      <div class="container">
-            <div class="row">
-    	
+
+    	<div class="container">
+    		<div class="row">
 		  <?php
-                  $consulta="SELECT * FROM categoriaxproducto WHERE Id_Producto='$producto' AND Id_Categoria>9";
+                  $consulta="SELECT * FROM categoriaxproducto WHERE Id_Producto='$producto' AND Id_Categoria>4";
                   $ejecutarConsulta= mysqli_query($con, $consulta);
                   $verFilas=mysqli_num_rows($ejecutarConsulta);
                   $fila=mysqli_fetch_array($ejecutarConsulta);
@@ -137,46 +135,8 @@
                     {
                       echo "<tr><td>Sin registros</td></tr>";
                     }else{
-                      for($i=0; $i<3;$i++){
-                        if($i==0){
-                        $cat=$fila[1];
-                        }
-                        if($i==1){
-                          $cat1=$fila[1];
-                          }    
-                          if($i==2){
-                            $cat2=$fila[1];
-                            }                                           
-                        $fila=mysqli_fetch_array($ejecutarConsulta);
-                      }
-                    }
-                  }
-
-                  $consulta="SELECT * FROM categoriaxproducto WHERE (Id_Producto<>$producto) AND (Id_Categoria=$cat) OR (Id_Categoria=$cat1)";
-                  $ejecutarConsulta= mysqli_query($con, $consulta);
-                  $verFilas=mysqli_num_rows($ejecutarConsulta);
-                  $fila=mysqli_fetch_array($ejecutarConsulta);
-
-                  if(!$ejecutarConsulta)
-                  {
-                    echo "Error en la consulta";
-                  }
-                  else{
-                    if($verFilas<1)
-                    {
-                      echo "<tr><td>Sin registros</td></tr>";
-                    }else{
-                      for($i=0; $i<3;$i++){
-                        if($i==0){
-                        $prod=$fila[2];
-                        }
-                        if($i==1){
-                          $prod2=$fila[2];
-                        }  
-                        if($i==2){
-                          $prod3=$fila[2];
-                        }  
-
+                      for($i=0; $i<1;$i++){
+                        $cat=$fila[1];                                             
                         $fila=mysqli_fetch_array($ejecutarConsulta);
                       }
                     }
@@ -199,7 +159,35 @@
                       for($i=0; $i<=$fila;$i++){
                            echo 
                            '
-                           
+                           <div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="product">
+							<a href="#" class="img-prod"><img class="img-fluid" src="galeria2/images2/nature_small_1.jpg" alt="Colorlib Template">
+								<span class="status">30%</span>
+								<div class="overlay"></div>
+							</a>
+							<div class="text py-3 pb-4 px-3 text-center">
+								<h3><a href="#">Pinos</a></h3>
+								<div class="d-flex">
+									<div class="pricing">
+										<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
+									</div>
+								</div>
+								<div class="bottom-area d-flex px-3">
+									<div class="m-auto d-flex">
+										<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+											<span><i class="ion-ios-menu"></i></span>
+										</a>
+										<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+											<span><i class="ion-ios-cart"></i></span>
+										</a>
+										<a href="#" class="heart d-flex justify-content-center align-items-center ">
+											<span><i class="ion-ios-heart"></i></span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+          </div>
                            ';                                        
                         $fila=mysqli_fetch_array($ejecutarConsulta);
                       }
@@ -207,66 +195,11 @@
                   }
                   ?>  
 
-    
-     
-    <?php
-                  $consulta="SELECT * FROM producto WHERE Id_Producto='$prod' OR Id_Producto='$prod2' OR Id_Producto='$prod3'";
-                  $ejecutarConsulta= mysqli_query($con, $consulta);
-                  $verFilas=mysqli_num_rows($ejecutarConsulta);
-                  $fila=mysqli_fetch_array($ejecutarConsulta);
-
-                  if(!$ejecutarConsulta)
-                  {
-                    echo "Error en la consulta";
-                  }
-                  else{
-                    if($verFilas<1)
-                    {
-                      echo "<tr><td>Sin registros</td></tr>";
-                    }else{
-                      for($i=0; $i<=$fila;$i++){
-                        echo 
-						'
-           
-            <div class="col-md-6 col-lg-3 ftco-animate">
-						<div class="product">
-							<a href="#" class="img-prod"><img class="img-fluid" src="'.$fila[3].'" alt="Colorlib Template">
-								<span class="status"></span>
-								<div class="overlay"></div>
-							</a>
-							<div class="text py-3 pb-4 px-3 text-center">
-								<h3><a href="#">'.$fila[1].'</a></h3>
-								<div class="d-flex">
-									<div class="pricing">
-										<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">'.$fila[5].'</span></p>
-									</div>
-								</div>
-								<div class="bottom-area d-flex px-3">
-									<div class="m-auto d-flex">
-									<a href="image.php?producto='.$fila[0].'" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="car.php" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="wishlist.php" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-									</div>
-								</div>
-							</div>
-						</div></div>
-         ';
-          $fila=mysqli_fetch_array($ejecutarConsulta);
-        }
-      }
-    }
-    ?>  
-    </div></div>	
-      </div>
+    			  
+          
+    		</div>
     	</div>
-    </section>     
-
+    </section>
 
 
 
