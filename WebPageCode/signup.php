@@ -41,11 +41,11 @@ if (isset($_SESSION['usuario'])) {
                             </div>
                             <div class="form-group">
                                 <label for="address"><i class="zmdi zmdi-home"></i></label>
-                                <input type="text" name="address" id="address" placeholder="Direccion" required />
+                                <input type="text" name="address" id="address" placeholder="Dirección" required />
                             </div>
                             <div class="form-group">
                                 <label for="phone"><i class="zmdi zmdi-phone"></i></label>
-                                <input type="text" name="phone" id="phone" placeholder="Telefono" required />
+                                <input type="tel" name="phone" id="phone"  pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="Telefono  Ej. 449 123 4567" required />
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>

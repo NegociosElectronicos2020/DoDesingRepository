@@ -119,7 +119,7 @@
                                 <li>Contenido Gratuito</li>                                                            
                                 <li>Soporte 24/7</li>
                             </ul>
-                            <a href="Shop.pho" class="btn_2">Mas...</a>
+                            <a href="Shop.php" class="btn_2">Mas...</a>
                         </div>
                     </div>
                 </div>

@@ -5,11 +5,9 @@
   //echo "Se realizo la conexion exitosamente";
 
 session_start();
-if (isset($_SESSION['usuario'])) {
-	header('Location: car.php');
-} else {
+if (!isset($_SESSION['usuario'])) {
 	header('Location: login.php');
-}
+} 
 ?>
 
 <!DOCTYPE html>

@@ -53,12 +53,13 @@
 <section class="breadcrumb breadcrumb_bg">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12"  style="margin-left: 15%;">
           <div class="breadcrumb_iner text-right">
             <div class="breadcrumb_iner_item">
-              <h2>Informacion de usuario</h2> 
+              <h2 >Informacion de usuario</h2> 
             </div>            
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="margin-right: 20%;">
+        <a href="admin.php" class="btn_2">Administrar página</a> 
         <a href="salir.php" class="btn_2">Cerrar Sesión</a> 
         </div>
           </div>
@@ -95,7 +96,7 @@
                                        <?php echo $usuario?>
                                     </h5>
                                     <h6>
-                                    '.$fila[1].'
+                                    '.$fila[1].'                                        
                                     </h6>
                                     
                             <ul class="nav nav-tabs" id="myTab" role="tablist">

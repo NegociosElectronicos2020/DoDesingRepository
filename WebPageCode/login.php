@@ -41,11 +41,11 @@
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="usuario" id="your_name" placeholder="Your Name"/>
+                                <input type="text" name="usuario" id="your_name" placeholder="Nombre de usuario"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="password" id="your_pass" placeholder="Contraseña"/>
                             </div>
                           
                             <div class="form-group form-button">
@@ -69,10 +69,18 @@
         $inicio="SELECT * FROM usuario WHERE Nombre_Usuario='$usuario' AND Contraseña='$pass'";
 
         $ejecutarInicio=mysqli_query($con, $inicio);
-        if($ejecutarInicio)
+        $verFilas=mysqli_num_rows($ejecutarInicio);
+        $fila=mysqli_fetch_array($ejecutarInicio);
+
+        if($verFilas=1)
         {
             $_SESSION['usuario'] = $usuario;
-            header('Location: index.php');
+
+            if($fila[1]=="Cliente"){
+                header('Location: index.php');
+            }else{
+                header('Location: admin.php');
+            }
         }    else
         {
             echo'<script type="text/javascript">

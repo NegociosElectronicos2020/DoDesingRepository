@@ -5,9 +5,7 @@
   //echo "Se realizo la conexion exitosamente";
 
   session_start();
-  if (isset($_SESSION['usuario'])) {
-    header('Location: wishlist.php');
-  } else {
+  if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');
   }
 ?>
